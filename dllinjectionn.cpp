@@ -18,9 +18,8 @@ int main(int argc, char* argv[]) {
 
 	LPVOID rBuffer = VirtualAllocEx(hProcess, NULL, dllSize, (MEM_COMMIT | MEM_RESERVE), PAGE_READWRITE);
 
-	size_t bff = 0;
 
-	WriteProcessMemory(hProcess, rBuffer, dllPath, dllSize, &bff);
+	WriteProcessMemory(hProcess, rBuffer, dllPath, dllSize, NULL);
 
 	DWORD TID = NULL;
 
